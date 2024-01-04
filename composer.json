@@ -1,11 +1,11 @@
 {
-    "name": "programmer-zaman-now/belajar-php-mvc",
-    "description": "Belajar PHP MVC",
+    "name": "fanboykun/native-mvc",
+    "description": "Native PHP MVC",
     "type": "project",
     "authors": [
         {
-            "name": "Eko Kurniawan Khannedy",
-            "email": "echo.khannedy@gmail.com"
+            "name": "Irfan Ramadhan",
+            "email": "joyykun@gmail.com"
         }
     ],
     "require": {
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ProgrammerZamanNow\\Belajar\\PHP\\MVC\\" : "app"
+            "App\\" : "app"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ProgrammerZamanNow\\Belajar\\PHP\\MVC\\" : "test"
+            "App\\" : "test"
         }
     }
 }

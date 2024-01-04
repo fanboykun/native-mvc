@@ -1,8 +1,8 @@
 <?php
 
-namespace ProgrammerZamanNow\Belajar\PHP\MVC\Controller;
+namespace App\Controller;
 
-use ProgrammerZamanNow\Belajar\PHP\MVC\App\View;
+use App\Bootstrap\View;
 
 class HomeController
 {
@@ -10,26 +10,11 @@ class HomeController
     function index(): void
     {
         $model = [
-            "title" => "Belajar PHP MVC",
-            "content" => "Selamat Belajar PHP MVC dari Programmer Zaman Now"
+            "title" => "Native PHP MVC",
+            "content" => "Place Any Data"
         ];
 
         View::render('Home/index', $model);
-    }
-
-    function hello(): void
-    {
-        echo "HomeController.hello()";
-    }
-
-    function world(): void
-    {
-        echo "HomeController.world()";
-    }
-
-    function about(): void
-    {
-        echo "Author : Eko Kurniawan Khannedy";
     }
 
     function login(): void
@@ -46,7 +31,13 @@ class HomeController
         $response = [
             "message" => "Login Sukses"
         ];
-        // kirimkan response ke view
+        // Send Back the data to the view
+    }
+
+    function register() : void
+    {
+        $data = ['message' => 'content here'];
+        View::render('register', $data, 'app-layout');
     }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ProgrammerZamanNow\Belajar\PHP\MVC;
+namespace App;
 
 use PHPUnit\Framework\TestCase;
 

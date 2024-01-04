@@ -1,5 +1,2 @@
-<html>
-<body>
-<h1>Register</h1>
-</body>
-</html>
+<h3>From Content Section</h3>
+<?= $data['message'] ?>

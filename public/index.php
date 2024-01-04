@@ -2,16 +2,17 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use ProgrammerZamanNow\Belajar\PHP\MVC\App\Router;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\HomeController;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Controller\ProductController;
-use ProgrammerZamanNow\Belajar\PHP\MVC\Middleware\AuthMiddleware;
+use App\Bootstrap\Route;
+use App\Controller\HomeController;
+use App\Controller\ProductController;
+use App\Middleware\AuthMiddleware;
 
-Router::add('GET', '/products/([0-9a-zA-Z]*)/categories/([0-9a-zA-Z]*)', ProductController::class, 'categories');
+Route::handle('GET', '/products/([0-9a-zA-Z]*)/categories/([0-9a-zA-Z]*)', ProductController::class, 'categories');
 
-Router::add('GET', '/', HomeController::class, 'index');
-Router::add('GET', '/hello', HomeController::class, 'hello', [AuthMiddleware::class]);
-Router::add('GET', '/world', HomeController::class, 'world', [AuthMiddleware::class]);
-Router::add('GET', '/about', HomeController::class, 'about');
+Route::handle('GET', '/', HomeController::class, 'index');
+Route::handle('GET', '/hello', HomeController::class, 'hello', [AuthMiddleware::class]);
+Route::handle('GET', '/world', HomeController::class, 'world', [AuthMiddleware::class]);
+Route::handle('GET', '/about', HomeController::class, 'about');
+Route::handle('GET', '/register', HomeController::class, 'register');
 
-Router::run();
+Route::execute();
