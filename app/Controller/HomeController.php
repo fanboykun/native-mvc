@@ -36,8 +36,7 @@ class HomeController
 
     function register() : void
     {
-        $data = ['message' => 'content here'];
-        View::render('register', $data, 'app-layout');
+        View::render('register', ['message' => 'this is a data that is passed between files'], 'app-layout');
     }
 
 }

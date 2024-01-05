@@ -1,3 +1,6 @@
+<?php
+    use App\Bootstrap\Layout;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +10,7 @@
 </head>
 <body>
     <h1>Main Layout, From Layout</h1>
-    <?php 
-         if(isset($content)) {
-            require $content; 
-        }
-    ?>
+    <?php yieldContent() ?>
+    <?php include($content) ?>
 </body>
 </html>

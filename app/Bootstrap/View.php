@@ -14,7 +14,7 @@ class View
      * @param string $layout
      * @return void
      */
-    public static function render(string $view, array $model = [], string $layout = null) : void
+    public static function render(string $view, array|string $data, string $layout = null) : void
     {
         $destination = __DIR__ . '/../View/' . $view . '.php';
         try {
@@ -28,7 +28,7 @@ class View
                     throw new ExceptionHandler("Layout Destination Not Found", 404);
                     return;
                 }
-                Layout::yield($layout_path, $destination, $model);
+                Layout::yield($layout_path, $destination, $data);
             } else {
                 require $destination;
             }
