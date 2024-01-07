@@ -9,12 +9,17 @@ class HomeController
 
     function index(): void
     {
-        $model = [
-            "title" => "Native PHP MVC",
-            "content" => "Place Any Data"
-        ];
+        View::render('index', ['message' => 'Dinamyc Content Layouting'], 'app-layout');
+    }
 
-        View::render('Home/index', $model);
+    function dashboard(): void
+    {
+        View::render('Home/dashboard', ['message' => 'Middlewares', 'user' => $_SESSION['user']], 'app-layout');
+    }
+
+    function register() : void
+    {
+        View::render('register', ['message' => 'MVC Infrastructure', 'note' => 'this is a data that is passed between files, current content is register'], 'app-layout');
     }
 
     function login(): void
@@ -32,11 +37,6 @@ class HomeController
             "message" => "Login Sukses"
         ];
         // Send Back the data to the view
-    }
-
-    function register() : void
-    {
-        View::render('register', ['message' => 'this is a data that is passed between files'], 'app-layout');
     }
 
 }

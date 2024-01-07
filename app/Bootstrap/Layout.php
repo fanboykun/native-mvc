@@ -16,14 +16,14 @@ class Layout
      * @param string $content
      * @param $array|string $data
      */
-    public static function yield(string $layout, string $content = null, array|string $data) : void
+    public static function yield(string $__layout__, string $__content__ = null, array|string $__data__layout) : void
     {
-        // make it global so that our helper function can access it's value
-        $GLOBALS['layout'] = $layout;
-        $GLOBALS['content'] = $content;
-        $GLOBALS['data'] = $data;
-
-        require self::$helper_path;
+        // require self::$helper_path;
+        // extract the data so that the consumer can access the data in the form and with the name like how it's passed
+        if(isset($__data__layout)) {
+            extract($__data__layout);
+        }
+        require($__layout__);
     }
 
 }

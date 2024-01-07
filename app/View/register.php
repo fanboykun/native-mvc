@@ -1,3 +1,2 @@
-<h3>From Content Section</h3>
-<!-- <?= $data['message'] ?> -->
-<?= $message ?>
+<li> <?= $message ?> </li>
+<h4> <?= $note ?> </h4>
